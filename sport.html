@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>Strona ze sportem</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"/>
+</head>
+<body>
+
+<header>
+      <h1>Zdrowe życie</h1>
+	  <h3 id="zegar">zegar</h3>
+</header>
+
+
+<nav>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="dieta.html">Dieta</a></li>
+        <li><a href="sport.html">Sport</a></li>
+        <li><a href="omnie.html">O mnie</a></li>
+      </ul>
+</nav>
+	
+<main>
+
+      <article>
+        <h2>Znajdujesz się na stronie o sporcie</h2>
+		<p>Sport można uprawiać w każdym wieku i o każdej porze dnia czy nocy.</p>
+		<p>Sport bardzo dobrze wpływa na nasz układ krążeniowy i odpornościowy, dlatego powinniśmy ćwiczyć przynajmniej kilka razy dziennie.</p>
+        </article>
+
+
+    </main>
+	
+	
+	 <footer>
+      <center><p>©Copyright 2022. Wszystkie prawa zastrzeżone.</p></center>
+    </footer>
+	
+</body>
+<script>
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+  if(hh == 0){
+      hh = 12;
+  }
+  if(hh > 12){
+      hh = hh - 12;
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  document.getElementById("zegar").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+currentTime();
+</script>
+</html>
